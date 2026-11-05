@@ -16,6 +16,16 @@ header{min-height:76px;display:flex;align-items:center;border-bottom:1px solid #
 .hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid #ffffff12;border-radius:50%;right:-110px;bottom:-240px;box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff05}
 .kicker{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
 h1{font-size:clamp(42px,7vw,78px);line-height:1.02;letter-spacing:-2px;margin:18px 0;max-width:720px}h1 .accent{color:var(--cyan)}
+.lang-picker{position:relative;flex:0 0 auto}
+.language-toggle{width:42px;height:42px;display:grid;place-items:center;padding:0;border:1px solid #ffffff45;border-radius:50%;background:#102c4c;cursor:pointer;transition:background .2s,border-color .2s}
+.language-toggle:hover,.language-toggle[aria-expanded=true]{background:#17446f;border-color:var(--cyan)}
+.language-toggle:focus-visible,.language-option:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.flag-icon{display:block;width:24px;height:18px;border-radius:2px;overflow:hidden;filter:drop-shadow(0 1px 2px #0005)}
+.language-menu{position:absolute;top:calc(100% + 9px);right:0;z-index:20;min-width:148px;padding:6px;display:grid;gap:3px;border:1px solid #dce6ee;border-radius:11px;background:#fff;box-shadow:0 12px 32px #0004}
+.language-menu[hidden]{display:none}
+.language-option{display:flex;align-items:center;gap:10px;width:100%;padding:9px 10px;border:0;border-radius:7px;background:transparent;color:var(--ink);font:inherit;font-size:13px;text-align:left;cursor:pointer}
+.language-option:hover,.language-option[aria-checked=true]{background:#eaf3f8}
+.language-option[aria-checked=true]::after{content:"✓";margin-left:auto;color:#087fa8;font-weight:800}
 .lead{font-size:18px;line-height:1.65;color:#c3d3e2;max-width:570px;margin:0}
 .searchbox{position:relative;z-index:1;margin-top:48px;background:#fff;color:var(--ink);padding:22px;border-radius:16px;max-width:1000px;box-shadow:0 22px 65px #0005}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.tab{border:0;border-radius:30px;padding:11px 19px;background:#edf3f7;color:#24425e;font-weight:700;cursor:pointer}.tab.active{background:var(--blue);color:white}
@@ -35,11 +45,11 @@ input,select{width:100%;height:48px;border:1px solid #d7e1e9;border-radius:9px;p
 .dest strong{font-size:22px}.dest span{font-size:13px;color:#d3e5ef;margin-top:5px}
 footer{padding:25px 0;color:#9fb3c9;font-size:13px;background:#06162b}
 @media(max-width:800px){.fields{grid-template-columns:1fr 1fr}.fields>div:first-child{grid-column:1/-1}.searchbtn{width:100%}.grid,.dest-grid{grid-template-columns:1fr 1fr}.hero{padding:72px 0 58px}.head-right{gap:14px}nav{gap:16px}}
-@media(max-width:600px){header{padding:12px 0}.head{align-items:flex-start;flex-wrap:wrap}.head-right{width:100%;justify-content:space-between}nav{gap:15px;font-size:12px}.language{height:36px} .hero{padding:60px 0 48px}.lead{font-size:16px}.searchbox{padding:16px;margin-top:32px}.fields,.grid,.dest-grid{grid-template-columns:1fr}.fields>div:first-child{grid-column:auto}.section,.destinations{padding:48px 0}.section h2,.destinations h2{font-size:27px}}
+@media(max-width:600px){header{padding:12px 0}.head{align-items:flex-start;flex-wrap:wrap}.head-right{width:100%;justify-content:space-between}nav{gap:15px;font-size:12px}.language-toggle{width:38px;height:38px} .hero{padding:60px 0 48px}.lead{font-size:16px}.searchbox{padding:16px;margin-top:32px}.fields,.grid,.dest-grid{grid-template-columns:1fr}.fields>div:first-child{grid-column:auto}.section,.destinations{padding:48px 0}.section h2,.destinations h2{font-size:27px}}
 </style>
 </head>
 <body>
-<header><div class="wrap head"><a class="brand" href="#" data-i18n-aria="brand.home">TEMO <b>TRAVEL</b></a><div class="head-right"><nav><a href="#hotels" data-i18n="nav.hotels">სასტუმროები</a><a href="#apartments" data-i18n="nav.apartments">აპარტამენტები</a><a href="#cars" data-i18n="nav.cars">ავტომობილის ქირაობა</a></nav><select class="language" id="languageSelect" data-i18n-aria="language.label" aria-label="ენის არჩევა"><option value="ka">ქართული</option><option value="en">English</option><option value="el">Ελληνικά</option></select></div></div></header>
+<header><div class="wrap head"><a class="brand" href="#" data-i18n-aria="brand.home">TEMO <b>TRAVEL</b></a><div class="head-right"><nav><a href="#hotels" data-i18n="nav.hotels">სასტუმროები</a><a href="#apartments" data-i18n="nav.apartments">აპარტამენტები</a><a href="#cars" data-i18n="nav.cars">ავტომობილის ქირაობა</a></nav><div class="lang-picker" id="languagePicker"><button class="language-toggle" id="languageToggle" type="button" data-i18n-aria="language.label" aria-label="ენის არჩევა" aria-haspopup="menu" aria-expanded="false"><span id="currentFlag" aria-hidden="true"></span></button><div class="language-menu" id="languageMenu" role="menu" hidden><button class="language-option" type="button" role="menuitemradio" data-language="ka" aria-checked="true" aria-label="ქართული"><span aria-hidden="true"><svg class="flag-icon" viewBox="0 0 24 18"><rect width="24" height="18" fill="#fff"/><path d="M0 9h24M12 0v18" stroke="#d21e25" stroke-width="3"/><path d="M6 2.2v3.6M4.2 4h3.6M18 2.2v3.6m-1.8-1.8h3.6M6 12.2v3.6m-1.8-1.8h3.6M18 12.2v3.6m-1.8-1.8h3.6" stroke="#d21e25" stroke-width="1.5"/></svg></span>ქართული</button><button class="language-option" type="button" role="menuitemradio" data-language="en" aria-checked="false" aria-label="English"><span aria-hidden="true"><svg class="flag-icon" viewBox="0 0 24 18"><rect width="24" height="18" fill="#123169"/><path d="m0 0 24 18M24 0 0 18" stroke="#fff" stroke-width="4"/><path d="m0 0 24 18M24 0 0 18" stroke="#c8102e" stroke-width="1.6"/><path d="M12 0v18M0 9h24" stroke="#fff" stroke-width="6"/><path d="M12 0v18M0 9h24" stroke="#c8102e" stroke-width="3.2"/></svg></span>English</button><button class="language-option" type="button" role="menuitemradio" data-language="el" aria-checked="false" aria-label="Ελληνικά"><span aria-hidden="true"><svg class="flag-icon" viewBox="0 0 24 18"><rect width="24" height="18" fill="#fff"/><path d="M0 0h24v2H0zm0 4h24v2H0zm0 8h24v2H0zm0 4h24v2H0z" fill="#0d5eaf"/><rect width="10" height="10" fill="#0d5eaf"/><path d="M5 1v8M1 5h8" stroke="#fff" stroke-width="2"/></svg></span>Ελληνικά</button></div></div></div></div></header>
 <main>
 <section class="hero"><div class="wrap">
 <div class="kicker" data-i18n="hero.kicker">იმოგზაურე საბერძნეთში თავდაჯერებულად</div>
@@ -72,7 +82,8 @@ footer{padding:25px 0;color:#9fb3c9;font-size:13px;background:#06162b}
 <script>
 (()=>{
 "use strict";
-// Add every new interface string to all three locale catalogs. Mark its HTML element with data-i18n, data-i18n-placeholder, or data-i18n-aria.\nconst translations={
+// Add every new interface string to all three locale catalogs. Mark its HTML element with data-i18n, data-i18n-placeholder, or data-i18n-aria.
+const translations={
 ka:{
 "brand.home":"TEMO TRAVEL — მთავარი გვერდი","language.label":"ენის არჩევა",
 "nav.hotels":"სასტუმროები","nav.apartments":"აპარტამენტები","nav.cars":"ავტომობილის ქირაობა",
@@ -126,9 +137,14 @@ for(const locale of Object.keys(translations)){for(const key of Object.keys(tran
 if(missing.length)console.warn("[TEMO i18n] Translation catalog mismatch:",missing);
 const sourceText=new WeakMap();
 document.querySelectorAll("[data-i18n]").forEach(node=>sourceText.set(node,node.textContent));
-const languageSelect=document.getElementById("languageSelect");
+const languagePicker=document.getElementById("languagePicker");
+const languageToggle=document.getElementById("languageToggle");
+const languageMenu=document.getElementById("languageMenu");
+const currentFlag=document.getElementById("currentFlag");
+const languageOptions=[...languageMenu.querySelectorAll("[data-language]")];
 const destinationInput=document.getElementById("destination");
 const status=document.getElementById("status");
+const languageFlags={ka:`<svg class="flag-icon" viewBox="0 0 24 18"><rect width="24" height="18" fill="#fff"/><path d="M0 9h24M12 0v18" stroke="#d21e25" stroke-width="3"/><path d="M6 2.2v3.6M4.2 4h3.6M18 2.2v3.6m-1.8-1.8h3.6M6 12.2v3.6m-1.8-1.8h3.6M18 12.2v3.6m-1.8-1.8h3.6" stroke="#d21e25" stroke-width="1.5"/></svg>`,en:`<svg class="flag-icon" viewBox="0 0 24 18"><rect width="24" height="18" fill="#123169"/><path d="m0 0 24 18M24 0 0 18" stroke="#fff" stroke-width="4"/><path d="m0 0 24 18M24 0 0 18" stroke="#c8102e" stroke-width="1.6"/><path d="M12 0v18M0 9h24" stroke="#fff" stroke-width="6"/><path d="M12 0v18M0 9h24" stroke="#c8102e" stroke-width="3.2"/></svg>`,el:`<svg class="flag-icon" viewBox="0 0 24 18"><rect width="24" height="18" fill="#fff"/><path d="M0 0h24v2H0zm0 4h24v2H0zm0 8h24v2H0zm0 4h24v2H0z" fill="#0d5eaf"/><rect width="10" height="10" fill="#0d5eaf"/><path d="M5 1v8M1 5h8" stroke="#fff" stroke-width="2"/></svg>`};
 let language="ka",selectedKind="hotels",statusMode="notice";
 const serviceKey=kind=>"service."+kind;
 function t(key,values={}){
@@ -145,7 +161,8 @@ status.textContent=t(key,{service:t(serviceKey(selectedKind)).toLocaleLowerCase(
 function applyLanguage(nextLanguage){
 language=translations[nextLanguage]?nextLanguage:"ka";
 document.documentElement.lang=language;
-languageSelect.value=language;
+currentFlag.innerHTML=languageFlags[language];
+languageOptions.forEach(option=>option.setAttribute("aria-checked",String(option.dataset.language===language)));
 try{localStorage.setItem("temo-language",language);}catch(_){}
 document.querySelectorAll("[data-i18n]").forEach(node=>{
 const key=node.dataset.i18n;
@@ -159,8 +176,13 @@ renderStatus();
 window.dispatchEvent(new CustomEvent("temo:languagechange",{detail:{language}}));
 }
 try{const saved=localStorage.getItem("temo-language");if(saved&&translations[saved])language=saved;}catch(_){}
-languageSelect.value=language;
-languageSelect.addEventListener("change",()=>applyLanguage(languageSelect.value));
+currentFlag.innerHTML=languageFlags[language];
+languageOptions.forEach(option=>option.setAttribute("aria-checked",String(option.dataset.language===language)));
+languageOptions.forEach(option=>option.addEventListener("click",()=>{applyLanguage(option.dataset.language);closeLanguageMenu();languageToggle.focus();}));
+function closeLanguageMenu(){languagePicker.classList.remove("open");languageMenu.hidden=true;languageToggle.setAttribute("aria-expanded","false");}
+languageToggle.addEventListener("click",()=>{const isOpen=languageToggle.getAttribute("aria-expanded")==="true";languagePicker.classList.toggle("open",!isOpen);languageMenu.hidden=isOpen;languageToggle.setAttribute("aria-expanded",String(!isOpen));});
+document.addEventListener("click",event=>{if(!languagePicker.contains(event.target))closeLanguageMenu();});
+document.addEventListener("keydown",event=>{if(event.key==="Escape"&&languageToggle.getAttribute("aria-expanded")==="true"){closeLanguageMenu();languageToggle.focus();}});
 document.querySelectorAll(".tab").forEach(button=>button.addEventListener("click",()=>{
 document.querySelectorAll(".tab").forEach(tab=>tab.classList.remove("active"));
 button.classList.add("active");selectedKind=button.dataset.kind;statusMode="notice";renderStatus();
