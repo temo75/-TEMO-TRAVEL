@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071a35">
+  <title>TEMO TRAVEL — Discover Greece</title>
+  <style>
+    :root{color-scheme:dark;--navy:#071a35;--blue:#0d3970;--cyan:#55d6e8;--white:#f6fbff;--muted:#b8c9dc}
+    *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--navy);color:var(--white)}
+    header{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 7%;border-bottom:1px solid #ffffff20}
+    .logo{font-size:22px;font-weight:800;letter-spacing:1.5px}.logo span{color:var(--cyan)}
+    nav{display:flex;gap:28px}nav a{color:var(--muted);text-decoration:none;font-size:14px}nav a:hover{color:white}
+    .hero{min-height:590px;padding:105px 7% 70px;background:radial-gradient(ellipse at 78% 25%,#17649a 0,transparent 38%),linear-gradient(125deg,#071a35 20%,#0c3260 100%)}
+    .eyebrow{color:var(--cyan);font-weight:700;letter-spacing:3px;font-size:12px}
+    h1{font-size:clamp(42px,7vw,76px);line-height:1.04;max-width:720px;margin:18px 0}
+    h1 span{color:var(--cyan)}.intro{color:var(--muted);font-size:18px;line-height:1.6;max-width:570px}
+    .search{margin-top:48px;max-width:1000px;background:#fff;color:#10243d;border-radius:16px;padding:22px;box-shadow:0 20px 60px #0005}
+    .tabs{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}.tab{border:0;border-radius:24px;padding:10px 18px;background:#eaf2f8;color:#183451;font-weight:700;cursor:pointer}.tab.active{background:#0d3970;color:#fff}
+    .fields{display:grid;grid-template-columns:2fr 1.2fr 1.2fr 1fr auto;gap:10px}
+    label{display:block;font-size:11px;color:#60758b;font-weight:700;margin:0 0 7px 3px;text-transform:uppercase}
+    input,select{width:100%;height:48px;border:1px solid #d6e0e9;border-radius:9px;padding:0 12px;background:white;color:#10243d;font-size:14px}
+    .submit{border:0;border-radius:9px;padding:0 24px;background:#087fa8;color:white;font-weight:700;font-size:14px;cursor:pointer}
+    .note{font-size:12px;color:#60758b;margin:13px 2px 0}
+    .categories{padding:58px 7% 75px;background:#f5f9fc;color:#10243d}
+    .categories h2{font-size:30px;margin:0 0 10px}.categories p{color:#60758b;margin:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .card{padding:26px;border:1px solid #dce6ee;border-radius:14px;background:white}.card .symbol{font-size:28px}.card h3{margin:14px 0 8px}.card p{line-height:1.5;font-size:14px}
+    footer{padding:26px 7%;color:#9fb3c9;font-size:13px;border-top:1px solid #ffffff20}
+    @media(max-width:760px){header{padding:0 5%;height:66px}nav{gap:13px}nav a{font-size:12px}.hero{padding:76px 5% 55px;min-height:0}.intro{font-size:16px}.fields{grid-template-columns:1fr 1fr}.fields>div:first-child{grid-column:1/-1}.submit{height:48px}.cards{grid-template-columns:1fr}.categories{padding:45px 5%}}
+    @media(max-width:420px){nav a:last-child{display:none}.fields{grid-template-columns:1fr}.fields>div:first-child{grid-column:auto}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">TEMO <span>TRAVEL</span></div>
+    <nav aria-label="Main navigation"><a href="#stays">Hotels</a><a href="#stays">Apartments</a><a href="#cars">Car rental</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">YOUR GREECE, YOUR WAY</div>
+      <h1>Discover Greece.<br><span>Stay your way.</span></h1>
+      <p class="intro">Find a place to stay or a car for your journey. Explore Greece and plan your next escape with TEMO TRAVEL.</p>
+      <div class="search" aria-label="Travel search">
+        <div class="tabs">
+          <button class="tab active" type="button" data-kind="Hotels">Hotels</button>
+          <button class="tab" type="button" data-kind="Apartments">Apartments</button>
+          <button class="tab" type="button" data-kind="Car rental">Car rental</button>
+        </div>
+        <form id="searchForm">
+          <div class="fields">
+            <div><label for="destination">Destination</label><input id="destination" placeholder="Where in Greece?" required></div>
+            <div><label for="checkin">Check-in</label><input id="checkin" type="date"></div>
+            <div><label for="checkout">Check-out</label><input id="checkout" type="date"></div>
+            <div><label for="guests">Guests</label><select id="guests"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option><option>5+ guests</option></select></div>
+            <button class="submit" type="submit">Search</button>
+          </div>
+          <p class="note" id="notice">Search and booking connections will be added after partner access is configured.</p>
+        </form>
+      </div>
+    </section>
+    <section class="categories" id="stays">
+      <h2>Plan your Greek escape</h2>
+      <p>Choose what you need for your trip.</p>
+      <div class="cards">
+        <article class="card"><div class="symbol">⌂</div><h3>Hotels</h3><p>Explore hotel stays across Greece.</p></article>
+        <article class="card"><div class="symbol">▦</div><h3>Apartments</h3><p>Find apartments for a short or longer stay.</p></article>
+        <article class="card" id="cars"><div class="symbol">↗</div><h3>Car rental</h3><p>Find a car for exploring the islands and mainland.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> TEMO TRAVEL</footer>
+  <script>
+    let kind = "Hotels";
+    document.querySelectorAll(".tab").forEach(button => button.addEventListener("click", () => {
+      document.querySelectorAll(".tab").forEach(item => item.classList.remove("active"));
+      button.classList.add("active"); kind = button.dataset.kind;
+      document.getElementById("notice").textContent = kind + " search will be connected when the booking partner is ready.";
+    }));
+    document.getElementById("searchForm").addEventListener("submit", event => {
+      event.preventDefault();
+      document.getElementById("notice").textContent = "Search for " + kind + " in " + document.getElementById("destination").value + " will be enabled after partner access is configured.";
+    });
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
