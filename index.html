@@ -1,87 +1,86 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#071a35">
-  <title>TEMO TRAVEL — Discover Greece</title>
-  <style>
-    :root{color-scheme:dark;--navy:#071a35;--blue:#0d3970;--cyan:#55d6e8;--white:#f6fbff;--muted:#b8c9dc}
-    *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--navy);color:var(--white)}
-    header{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 7%;border-bottom:1px solid #ffffff20}
-    .logo{font-size:22px;font-weight:800;letter-spacing:1.5px}.logo span{color:var(--cyan)}
-    nav{display:flex;gap:28px}nav a{color:var(--muted);text-decoration:none;font-size:14px}nav a:hover{color:white}
-    .hero{min-height:590px;padding:105px 7% 70px;background:radial-gradient(ellipse at 78% 25%,#17649a 0,transparent 38%),linear-gradient(125deg,#071a35 20%,#0c3260 100%)}
-    .eyebrow{color:var(--cyan);font-weight:700;letter-spacing:3px;font-size:12px}
-    h1{font-size:clamp(42px,7vw,76px);line-height:1.04;max-width:720px;margin:18px 0}
-    h1 span{color:var(--cyan)}.intro{color:var(--muted);font-size:18px;line-height:1.6;max-width:570px}
-    .search{margin-top:48px;max-width:1000px;background:#fff;color:#10243d;border-radius:16px;padding:22px;box-shadow:0 20px 60px #0005}
-    .tabs{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}.tab{border:0;border-radius:24px;padding:10px 18px;background:#eaf2f8;color:#183451;font-weight:700;cursor:pointer}.tab.active{background:#0d3970;color:#fff}
-    .fields{display:grid;grid-template-columns:2fr 1.2fr 1.2fr 1fr auto;gap:10px}
-    label{display:block;font-size:11px;color:#60758b;font-weight:700;margin:0 0 7px 3px;text-transform:uppercase}
-    input,select{width:100%;height:48px;border:1px solid #d6e0e9;border-radius:9px;padding:0 12px;background:white;color:#10243d;font-size:14px}
-    .submit{border:0;border-radius:9px;padding:0 24px;background:#087fa8;color:white;font-weight:700;font-size:14px;cursor:pointer}
-    .note{font-size:12px;color:#60758b;margin:13px 2px 0}
-    .categories{padding:58px 7% 75px;background:#f5f9fc;color:#10243d}
-    .categories h2{font-size:30px;margin:0 0 10px}.categories p{color:#60758b;margin:0}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
-    .card{padding:26px;border:1px solid #dce6ee;border-radius:14px;background:white}.card .symbol{font-size:28px}.card h3{margin:14px 0 8px}.card p{line-height:1.5;font-size:14px}
-    footer{padding:26px 7%;color:#9fb3c9;font-size:13px;border-top:1px solid #ffffff20}
-    @media(max-width:760px){header{padding:0 5%;height:66px}nav{gap:13px}nav a{font-size:12px}.hero{padding:76px 5% 55px;min-height:0}.intro{font-size:16px}.fields{grid-template-columns:1fr 1fr}.fields>div:first-child{grid-column:1/-1}.submit{height:48px}.cards{grid-template-columns:1fr}.categories{padding:45px 5%}}
-    @media(max-width:420px){nav a:last-child{display:none}.fields{grid-template-columns:1fr}.fields>div:first-child{grid-column:auto}}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071b35"><meta name="description" content="Discover hotels, apartments and car rentals across Greece with TEMO TRAVEL.">
+<title>TEMO TRAVEL | Discover Greece</title>
+<style>
+:root{--navy:#071b35;--blue:#103b69;--cyan:#65d8e8;--ink:#142b43;--muted:#64788c;--paper:#f4f8fb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:#fff;background:var(--navy)}
+a{color:inherit;text-decoration:none}.wrap{width:min(1160px,90%);margin:auto}
+header{height:76px;display:flex;align-items:center;border-bottom:1px solid #ffffff20;background:#071b35}
+.head{display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;font-size:22px;letter-spacing:1.6px}.brand b{color:var(--cyan)}
+nav{display:flex;gap:30px;color:#d1dfec;font-size:14px}nav a:hover{color:var(--cyan)}
+.hero{position:relative;overflow:hidden;padding:90px 0 72px;background:radial-gradient(ellipse at 83% 10%,#1a6592 0,transparent 34%),linear-gradient(120deg,#071b35,#0d3762)}
+.hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid #ffffff12;border-radius:50%;right:-110px;bottom:-240px;box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff05}
+.kicker{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
+h1{font-size:clamp(42px,7vw,78px);line-height:1.02;letter-spacing:-2px;margin:18px 0;max-width:720px}h1 span{color:var(--cyan)}
+.lead{font-size:18px;line-height:1.65;color:#c3d3e2;max-width:570px;margin:0}
+.searchbox{position:relative;z-index:1;margin-top:48px;background:#fff;color:var(--ink);padding:22px;border-radius:16px;max-width:1000px;box-shadow:0 22px 65px #0005}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.tab{border:0;border-radius:30px;padding:11px 19px;background:#edf3f7;color:#24425e;font-weight:700;cursor:pointer}.tab.active{background:var(--blue);color:white}
+.fields{display:grid;grid-template-columns:2fr 1.15fr 1.15fr 1fr auto;gap:10px;align-items:end}
+label{display:block;font-size:10px;letter-spacing:1px;font-weight:800;color:#60768a;margin:0 0 7px 3px}
+input,select{width:100%;height:48px;border:1px solid #d7e1e9;border-radius:9px;padding:0 12px;background:white;color:#18334c;font:inherit;font-size:14px}
+.searchbtn{height:48px;border:0;border-radius:9px;padding:0 24px;background:#087fa8;color:white;font-weight:800;cursor:pointer}.searchbtn:hover{background:#066887}
+.status{font-size:12px;color:#61768a;margin:14px 2px 0;min-height:16px}
+.section{padding:68px 0 76px;background:var(--paper);color:var(--ink)}.section h2{font-size:32px;letter-spacing:-.7px;margin:0 0 9px}.sub{margin:0;color:var(--muted);line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.tile{min-height:210px;border:1px solid #dce6ee;background:white;border-radius:15px;padding:25px;transition:transform .2s,box-shadow .2s}.tile:hover{transform:translateY(-4px);box-shadow:0 15px 35px #193b5914}
+.icon{width:48px;height:48px;border-radius:13px;background:#e7f6fa;color:#087fa8;display:grid;place-items:center;font-size:24px}
+.tile h3{font-size:20px;margin:18px 0 8px}.tile p{font-size:14px;color:var(--muted);line-height:1.6;margin:0}
+.destinations{padding:64px 0 72px;background:#fff;color:var(--ink)}
+.dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.dest{min-height:145px;border-radius:14px;padding:23px;background:linear-gradient(135deg,#123c65,#176b89);display:flex;flex-direction:column;justify-content:end;color:white}
+.dest strong{font-size:22px}.dest span{font-size:13px;color:#d3e5ef;margin-top:5px}
+footer{padding:25px 0;color:#9fb3c9;font-size:13px;background:#06162b}
+@media(max-width:800px){.fields{grid-template-columns:1fr 1fr}.fields>div:first-child{grid-column:1/-1}.searchbtn{width:100%}.grid,.dest-grid{grid-template-columns:1fr 1fr}.hero{padding:72px 0 58px}}
+@media(max-width:520px){header{height:66px}nav{gap:13px;font-size:12px}nav a:nth-child(2){display:none}.hero{padding:60px 0 48px}.lead{font-size:16px}.searchbox{padding:16px;margin-top:32px}.fields,.grid,.dest-grid{grid-template-columns:1fr}.fields>div:first-child{grid-column:auto}.section,.destinations{padding:48px 0}.section h2{font-size:27px}}
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo">TEMO <span>TRAVEL</span></div>
-    <nav aria-label="Main navigation"><a href="#stays">Hotels</a><a href="#stays">Apartments</a><a href="#cars">Car rental</a></nav>
-  </header>
-  <main>
-    <section class="hero">
-      <div class="eyebrow">YOUR GREECE, YOUR WAY</div>
-      <h1>Discover Greece.<br><span>Stay your way.</span></h1>
-      <p class="intro">Find a place to stay or a car for your journey. Explore Greece and plan your next escape with TEMO TRAVEL.</p>
-      <div class="search" aria-label="Travel search">
-        <div class="tabs">
-          <button class="tab active" type="button" data-kind="Hotels">Hotels</button>
-          <button class="tab" type="button" data-kind="Apartments">Apartments</button>
-          <button class="tab" type="button" data-kind="Car rental">Car rental</button>
-        </div>
-        <form id="searchForm">
-          <div class="fields">
-            <div><label for="destination">Destination</label><input id="destination" placeholder="Where in Greece?" required></div>
-            <div><label for="checkin">Check-in</label><input id="checkin" type="date"></div>
-            <div><label for="checkout">Check-out</label><input id="checkout" type="date"></div>
-            <div><label for="guests">Guests</label><select id="guests"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option><option>5+ guests</option></select></div>
-            <button class="submit" type="submit">Search</button>
-          </div>
-          <p class="note" id="notice">Search and booking connections will be added after partner access is configured.</p>
-        </form>
-      </div>
-    </section>
-    <section class="categories" id="stays">
-      <h2>Plan your Greek escape</h2>
-      <p>Choose what you need for your trip.</p>
-      <div class="cards">
-        <article class="card"><div class="symbol">⌂</div><h3>Hotels</h3><p>Explore hotel stays across Greece.</p></article>
-        <article class="card"><div class="symbol">▦</div><h3>Apartments</h3><p>Find apartments for a short or longer stay.</p></article>
-        <article class="card" id="cars"><div class="symbol">↗</div><h3>Car rental</h3><p>Find a car for exploring the islands and mainland.</p></article>
-      </div>
-    </section>
-  </main>
-  <footer>© <span id="year"></span> TEMO TRAVEL</footer>
-  <script>
-    let kind = "Hotels";
-    document.querySelectorAll(".tab").forEach(button => button.addEventListener("click", () => {
-      document.querySelectorAll(".tab").forEach(item => item.classList.remove("active"));
-      button.classList.add("active"); kind = button.dataset.kind;
-      document.getElementById("notice").textContent = kind + " search will be connected when the booking partner is ready.";
-    }));
-    document.getElementById("searchForm").addEventListener("submit", event => {
-      event.preventDefault();
-      document.getElementById("notice").textContent = "Search for " + kind + " in " + document.getElementById("destination").value + " will be enabled after partner access is configured.";
-    });
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+<header><div class="wrap head"><a class="brand" href="#">TEMO <b>TRAVEL</b></a><nav><a href="#hotels">Hotels</a><a href="#apartments">Apartments</a><a href="#cars">Car rental</a></nav></div></header>
+<main>
+<section class="hero"><div class="wrap">
+<div class="kicker">Explore Greece with confidence</div>
+<h1>Your Greek escape<br><span>starts here.</span></h1>
+<p class="lead">Find a place to stay and the freedom to explore. Discover hotels, apartments and car rentals across Greece.</p>
+<div class="searchbox">
+<div class="tabs" role="group" aria-label="Choose travel service">
+<button class="tab active" type="button" data-kind="Hotels">Hotels</button><button class="tab" type="button" data-kind="Apartments">Apartments</button><button class="tab" type="button" data-kind="Car rental">Car rental</button>
+</div>
+<form id="searchForm"><div class="fields">
+<div><label for="destination">DESTINATION</label><input id="destination" placeholder="Island, city or region" required></div>
+<div><label for="arrival">ARRIVAL</label><input id="arrival" type="date"></div>
+<div><label for="departure">DEPARTURE</label><input id="departure" type="date"></div>
+<div><label for="travellers">TRAVELLERS</label><select id="travellers"><option>1 person</option><option selected>2 people</option><option>3 people</option><option>4 people</option><option>5+ people</option></select></div>
+<button class="searchbtn" type="submit">Search</button>
+</div><p class="status" id="status" aria-live="polite">Booking search will be activated after partner access is connected.</p></form>
+</div></div></section>
+<section class="section" id="hotels"><div class="wrap">
+<div class="kicker">Travel essentials</div><h2>Everything for your trip</h2><p class="sub">Choose the service you need and start planning your journey.</p>
+<div class="grid">
+<article class="tile"><div class="icon">⌂</div><h3>Hotels</h3><p>Discover places to stay, from comfortable city hotels to relaxing island escapes.</p></article>
+<article class="tile" id="apartments"><div class="icon">▦</div><h3>Apartments</h3><p>Find your own space for a weekend break or a longer Greek holiday.</p></article>
+<article class="tile" id="cars"><div class="icon">↗</div><h3>Car rental</h3><p>Choose a car and explore beaches, villages and hidden corners of Greece.</p></article>
+</div></div></section>
+<section class="destinations"><div class="wrap"><div class="kicker">Get inspired</div><h2>Popular places in Greece</h2><p class="sub">A few ideas for where your next journey could take you.</p>
+<div class="dest-grid"><div class="dest"><strong>Crete</strong><span>Beaches, villages and history</span></div><div class="dest"><strong>Athens</strong><span>Culture, food and city life</span></div><div class="dest"><strong>Rhodes</strong><span>Sunshine and island charm</span></div></div>
+</div></section>
+</main>
+<footer><div class="wrap">© <span id="year"></span> TEMO TRAVEL</div></footer>
+<script>
+let selected="Hotels";
+const status=document.getElementById("status");
+document.querySelectorAll(".tab").forEach(button=>button.addEventListener("click",()=>{
+document.querySelectorAll(".tab").forEach(tab=>tab.classList.remove("active"));
+button.classList.add("active");selected=button.dataset.kind;
+status.textContent=selected+" booking search will be available when the booking partner is connected.";
+}));
+document.getElementById("searchForm").addEventListener("submit",event=>{
+event.preventDefault();
+const destination=document.getElementById("destination").value.trim();
+status.textContent="Your "+selected.toLowerCase()+" search for "+destination+" is ready for the booking-partner connection.";
+});
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body></html>
