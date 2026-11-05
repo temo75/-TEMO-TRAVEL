@@ -15,7 +15,7 @@ header{min-height:76px;display:flex;align-items:center;border-bottom:1px solid #
 .hero{position:relative;overflow:hidden;padding:90px 0 72px;background:radial-gradient(ellipse at 83% 10%,#1a6592 0,transparent 34%),linear-gradient(120deg,#071b35,#0d3762)}
 .hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid #ffffff12;border-radius:50%;right:-110px;bottom:-240px;box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff05}
 .kicker{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
-h1{font-size:clamp(42px,7vw,78px);line-height:1.02;letter-spacing:-2px;margin:18px 0;max-width:720px}h1 span{color:var(--cyan)}
+h1{font-size:clamp(42px,7vw,78px);line-height:1.02;letter-spacing:-2px;margin:18px 0;max-width:720px}h1 .accent{color:var(--cyan)}
 .lead{font-size:18px;line-height:1.65;color:#c3d3e2;max-width:570px;margin:0}
 .searchbox{position:relative;z-index:1;margin-top:48px;background:#fff;color:var(--ink);padding:22px;border-radius:16px;max-width:1000px;box-shadow:0 22px 65px #0005}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.tab{border:0;border-radius:30px;padding:11px 19px;background:#edf3f7;color:#24425e;font-weight:700;cursor:pointer}.tab.active{background:var(--blue);color:white}
@@ -43,7 +43,7 @@ footer{padding:25px 0;color:#9fb3c9;font-size:13px;background:#06162b}
 <main>
 <section class="hero"><div class="wrap">
 <div class="kicker" data-i18n="hero.kicker">იმოგზაურე საბერძნეთში თავდაჯერებულად</div>
-<h1><span data-i18n="hero.title">შენი ბერძნული დასვენება</span><br><span data-i18n="hero.titleAccent">აქ იწყება.</span></h1>
+<h1><span data-i18n="hero.title">შენი ბერძნული დასვენება</span><br><span class="accent" data-i18n="hero.titleAccent">აქ იწყება.</span></h1>
 <p class="lead" data-i18n="hero.lead">იპოვე დასასვენებელი ადგილი და თავისუფლება აღმოსაჩენად. შეარჩიე სასტუმრო, აპარტამენტი ან ავტომობილი საბერძნეთში.</p>
 <div class="searchbox">
 <div class="tabs" role="group" data-i18n-aria="search.serviceLabel" aria-label="აირჩიე სამოგზაურო სერვისი">
@@ -72,7 +72,7 @@ footer{padding:25px 0;color:#9fb3c9;font-size:13px;background:#06162b}
 <script>
 (()=>{
 "use strict";
-const translations={
+// Add every new interface string to all three locale catalogs. Mark its HTML element with data-i18n, data-i18n-placeholder, or data-i18n-aria.\nconst translations={
 ka:{
 "brand.home":"TEMO TRAVEL — მთავარი გვერდი","language.label":"ენის არჩევა",
 "nav.hotels":"სასტუმროები","nav.apartments":"აპარტამენტები","nav.cars":"ავტომობილის ქირაობა",
