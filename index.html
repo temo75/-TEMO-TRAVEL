@@ -1,16 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="ka">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#071b35"><meta name="description" content="Discover hotels, apartments and car rentals across Greece with TEMO TRAVEL.">
-<title>TEMO TRAVEL | Discover Greece</title>
+<meta name="theme-color" content="#071b35"><meta name="description" content="აღმოაჩინე სასტუმროები, აპარტამენტები და ავტომობილების გაქირავება საბერძნეთში TEMO TRAVEL-თან ერთად." id="metaDescription">
+<title>TEMO TRAVEL | აღმოაჩინე საბერძნეთი</title>
 <style>
 :root{--navy:#071b35;--blue:#103b69;--cyan:#65d8e8;--ink:#142b43;--muted:#64788c;--paper:#f4f8fb}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:#fff;background:var(--navy)}
 a{color:inherit;text-decoration:none}.wrap{width:min(1160px,90%);margin:auto}
-header{height:76px;display:flex;align-items:center;border-bottom:1px solid #ffffff20;background:#071b35}
-.head{display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;font-size:22px;letter-spacing:1.6px}.brand b{color:var(--cyan)}
-nav{display:flex;gap:30px;color:#d1dfec;font-size:14px}nav a:hover{color:var(--cyan)}
+header{min-height:76px;display:flex;align-items:center;border-bottom:1px solid #ffffff20;background:#071b35}
+.head{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:900;font-size:22px;letter-spacing:1.6px;white-space:nowrap}.brand b{color:var(--cyan)}
+.head-right{display:flex;align-items:center;gap:24px}nav{display:flex;gap:30px;color:#d1dfec;font-size:14px}nav a:hover{color:var(--cyan)}
+.language{height:40px;min-width:118px;border:1px solid #ffffff40;border-radius:9px;padding:0 30px 0 11px;background:#102c4c;color:#fff;font:inherit;font-size:13px}
 .hero{position:relative;overflow:hidden;padding:90px 0 72px;background:radial-gradient(ellipse at 83% 10%,#1a6592 0,transparent 34%),linear-gradient(120deg,#071b35,#0d3762)}
 .hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid #ffffff12;border-radius:50%;right:-110px;bottom:-240px;box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff05}
 .kicker{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
@@ -23,7 +24,7 @@ label{display:block;font-size:10px;letter-spacing:1px;font-weight:800;color:#607
 input,select{width:100%;height:48px;border:1px solid #d7e1e9;border-radius:9px;padding:0 12px;background:white;color:#18334c;font:inherit;font-size:14px}
 .searchbtn{height:48px;border:0;border-radius:9px;padding:0 24px;background:#087fa8;color:white;font-weight:800;cursor:pointer}.searchbtn:hover{background:#066887}
 .status{font-size:12px;color:#61768a;margin:14px 2px 0;min-height:16px}
-.section{padding:68px 0 76px;background:var(--paper);color:var(--ink)}.section h2{font-size:32px;letter-spacing:-.7px;margin:0 0 9px}.sub{margin:0;color:var(--muted);line-height:1.6}
+.section{padding:68px 0 76px;background:var(--paper);color:var(--ink)}.section h2,.destinations h2{font-size:32px;letter-spacing:-.7px;margin:0 0 9px}.sub{margin:0;color:var(--muted);line-height:1.6}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
 .tile{min-height:210px;border:1px solid #dce6ee;background:white;border-radius:15px;padding:25px;transition:transform .2s,box-shadow .2s}.tile:hover{transform:translateY(-4px);box-shadow:0 15px 35px #193b5914}
 .icon{width:48px;height:48px;border-radius:13px;background:#e7f6fa;color:#087fa8;display:grid;place-items:center;font-size:24px}
@@ -33,54 +34,144 @@ input,select{width:100%;height:48px;border:1px solid #d7e1e9;border-radius:9px;p
 .dest{min-height:145px;border-radius:14px;padding:23px;background:linear-gradient(135deg,#123c65,#176b89);display:flex;flex-direction:column;justify-content:end;color:white}
 .dest strong{font-size:22px}.dest span{font-size:13px;color:#d3e5ef;margin-top:5px}
 footer{padding:25px 0;color:#9fb3c9;font-size:13px;background:#06162b}
-@media(max-width:800px){.fields{grid-template-columns:1fr 1fr}.fields>div:first-child{grid-column:1/-1}.searchbtn{width:100%}.grid,.dest-grid{grid-template-columns:1fr 1fr}.hero{padding:72px 0 58px}}
-@media(max-width:520px){header{height:66px}nav{gap:13px;font-size:12px}nav a:nth-child(2){display:none}.hero{padding:60px 0 48px}.lead{font-size:16px}.searchbox{padding:16px;margin-top:32px}.fields,.grid,.dest-grid{grid-template-columns:1fr}.fields>div:first-child{grid-column:auto}.section,.destinations{padding:48px 0}.section h2{font-size:27px}}
+@media(max-width:800px){.fields{grid-template-columns:1fr 1fr}.fields>div:first-child{grid-column:1/-1}.searchbtn{width:100%}.grid,.dest-grid{grid-template-columns:1fr 1fr}.hero{padding:72px 0 58px}.head-right{gap:14px}nav{gap:16px}}
+@media(max-width:600px){header{padding:12px 0}.head{align-items:flex-start;flex-wrap:wrap}.head-right{width:100%;justify-content:space-between}nav{gap:15px;font-size:12px}.language{height:36px} .hero{padding:60px 0 48px}.lead{font-size:16px}.searchbox{padding:16px;margin-top:32px}.fields,.grid,.dest-grid{grid-template-columns:1fr}.fields>div:first-child{grid-column:auto}.section,.destinations{padding:48px 0}.section h2,.destinations h2{font-size:27px}}
 </style>
 </head>
 <body>
-<header><div class="wrap head"><a class="brand" href="#">TEMO <b>TRAVEL</b></a><nav><a href="#hotels">Hotels</a><a href="#apartments">Apartments</a><a href="#cars">Car rental</a></nav></div></header>
+<header><div class="wrap head"><a class="brand" href="#" data-i18n-aria="brand.home">TEMO <b>TRAVEL</b></a><div class="head-right"><nav><a href="#hotels" data-i18n="nav.hotels">სასტუმროები</a><a href="#apartments" data-i18n="nav.apartments">აპარტამენტები</a><a href="#cars" data-i18n="nav.cars">ავტომობილის ქირაობა</a></nav><select class="language" id="languageSelect" data-i18n-aria="language.label" aria-label="ენის არჩევა"><option value="ka">ქართული</option><option value="en">English</option><option value="el">Ελληνικά</option></select></div></div></header>
 <main>
 <section class="hero"><div class="wrap">
-<div class="kicker">Explore Greece with confidence</div>
-<h1>Your Greek escape<br><span>starts here.</span></h1>
-<p class="lead">Find a place to stay and the freedom to explore. Discover hotels, apartments and car rentals across Greece.</p>
+<div class="kicker" data-i18n="hero.kicker">იმოგზაურე საბერძნეთში თავდაჯერებულად</div>
+<h1><span data-i18n="hero.title">შენი ბერძნული დასვენება</span><br><span data-i18n="hero.titleAccent">აქ იწყება.</span></h1>
+<p class="lead" data-i18n="hero.lead">იპოვე დასასვენებელი ადგილი და თავისუფლება აღმოსაჩენად. შეარჩიე სასტუმრო, აპარტამენტი ან ავტომობილი საბერძნეთში.</p>
 <div class="searchbox">
-<div class="tabs" role="group" aria-label="Choose travel service">
-<button class="tab active" type="button" data-kind="Hotels">Hotels</button><button class="tab" type="button" data-kind="Apartments">Apartments</button><button class="tab" type="button" data-kind="Car rental">Car rental</button>
+<div class="tabs" role="group" data-i18n-aria="search.serviceLabel" aria-label="აირჩიე სამოგზაურო სერვისი">
+<button class="tab active" type="button" data-kind="hotels" data-i18n="service.hotels">სასტუმროები</button><button class="tab" type="button" data-kind="apartments" data-i18n="service.apartments">აპარტამენტები</button><button class="tab" type="button" data-kind="cars" data-i18n="service.cars">ავტომობილის ქირაობა</button>
 </div>
 <form id="searchForm"><div class="fields">
-<div><label for="destination">DESTINATION</label><input id="destination" placeholder="Island, city or region" required></div>
-<div><label for="arrival">ARRIVAL</label><input id="arrival" type="date"></div>
-<div><label for="departure">DEPARTURE</label><input id="departure" type="date"></div>
-<div><label for="travellers">TRAVELLERS</label><select id="travellers"><option>1 person</option><option selected>2 people</option><option>3 people</option><option>4 people</option><option>5+ people</option></select></div>
-<button class="searchbtn" type="submit">Search</button>
-</div><p class="status" id="status" aria-live="polite">Booking search will be activated after partner access is connected.</p></form>
+<div><label for="destination" data-i18n="search.destination">მიმართულება</label><input id="destination" data-i18n-placeholder="search.destinationPlaceholder" placeholder="კუნძული, ქალაქი ან რეგიონი" required></div>
+<div><label for="arrival" data-i18n="search.arrival">ჩასვლა</label><input id="arrival" type="date"></div>
+<div><label for="departure" data-i18n="search.departure">გამგზავრება</label><input id="departure" type="date"></div>
+<div><label for="travellers" data-i18n="search.travellers">მოგზაურები</label><select id="travellers"><option data-i18n="travellers.one">1 ადამიანი</option><option selected data-i18n="travellers.two">2 ადამიანი</option><option data-i18n="travellers.three">3 ადამიანი</option><option data-i18n="travellers.four">4 ადამიანი</option><option data-i18n="travellers.fivePlus">5 ან მეტი ადამიანი</option></select></div>
+<button class="searchbtn" type="submit" data-i18n="search.button">ძებნა</button>
+</div><p class="status" id="status" aria-live="polite"></p></form>
 </div></div></section>
 <section class="section" id="hotels"><div class="wrap">
-<div class="kicker">Travel essentials</div><h2>Everything for your trip</h2><p class="sub">Choose the service you need and start planning your journey.</p>
+<div class="kicker" data-i18n="essentials.kicker">მოგზაურობისთვის აუცილებელი</div><h2 data-i18n="essentials.title">ყველაფერი შენი მოგზაურობისთვის</h2><p class="sub" data-i18n="essentials.subtitle">აირჩიე საჭირო სერვისი და დაიწყე მოგზაურობის დაგეგმვა.</p>
 <div class="grid">
-<article class="tile"><div class="icon">⌂</div><h3>Hotels</h3><p>Discover places to stay, from comfortable city hotels to relaxing island escapes.</p></article>
-<article class="tile" id="apartments"><div class="icon">▦</div><h3>Apartments</h3><p>Find your own space for a weekend break or a longer Greek holiday.</p></article>
-<article class="tile" id="cars"><div class="icon">↗</div><h3>Car rental</h3><p>Choose a car and explore beaches, villages and hidden corners of Greece.</p></article>
+<article class="tile"><div class="icon" aria-hidden="true">⌂</div><h3 data-i18n="service.hotels">სასტუმროები</h3><p data-i18n="tile.hotels">შეარჩიე დასასვენებელი ადგილი — ქალაქის კომფორტული სასტუმროდან კუნძულის მშვიდ გარემომდე.</p></article>
+<article class="tile" id="apartments"><div class="icon" aria-hidden="true">▦</div><h3 data-i18n="service.apartments">აპარტამენტები</h3><p data-i18n="tile.apartments">იპოვე შენი სივრცე შაბათ-კვირის გასატარებლად ან უფრო ხანგრძლივი ბერძნული დასვენებისთვის.</p></article>
+<article class="tile" id="cars"><div class="icon" aria-hidden="true">↗</div><h3 data-i18n="service.cars">ავტომობილის ქირაობა</h3><p data-i18n="tile.cars">შეარჩიე ავტომობილი და აღმოაჩინე საბერძნეთის პლაჟები, სოფლები და ნაკლებად ცნობილი ადგილები.</p></article>
 </div></div></section>
-<section class="destinations"><div class="wrap"><div class="kicker">Get inspired</div><h2>Popular places in Greece</h2><p class="sub">A few ideas for where your next journey could take you.</p>
-<div class="dest-grid"><div class="dest"><strong>Crete</strong><span>Beaches, villages and history</span></div><div class="dest"><strong>Athens</strong><span>Culture, food and city life</span></div><div class="dest"><strong>Rhodes</strong><span>Sunshine and island charm</span></div></div>
+<section class="destinations"><div class="wrap"><div class="kicker" data-i18n="destinations.kicker">იდეებისთვის</div><h2 data-i18n="destinations.title">პოპულარული ადგილები საბერძნეთში</h2><p class="sub" data-i18n="destinations.subtitle">რამდენიმე იდეა იმისთვის, თუ სად შეიძლება წაგიყვანოს შემდეგმა მოგზაურობამ.</p>
+<div class="dest-grid"><div class="dest"><strong data-i18n="place.crete">კრეტა</strong><span data-i18n="place.creteDesc">პლაჟები, სოფლები და ისტორია</span></div><div class="dest"><strong data-i18n="place.athens">ათენი</strong><span data-i18n="place.athensDesc">კულტურა, კერძები და ქალაქური ცხოვრება</span></div><div class="dest"><strong data-i18n="place.rhodes">როდოსი</strong><span data-i18n="place.rhodesDesc">მზე და კუნძულის ხიბლი</span></div></div>
 </div></section>
 </main>
 <footer><div class="wrap">© <span id="year"></span> TEMO TRAVEL</div></footer>
 <script>
-let selected="Hotels";
+(()=>{
+"use strict";
+const translations={
+ka:{
+"brand.home":"TEMO TRAVEL — მთავარი გვერდი","language.label":"ენის არჩევა",
+"nav.hotels":"სასტუმროები","nav.apartments":"აპარტამენტები","nav.cars":"ავტომობილის ქირაობა",
+"hero.kicker":"იმოგზაურე საბერძნეთში თავდაჯერებულად","hero.title":"შენი ბერძნული დასვენება","hero.titleAccent":"აქ იწყება.",
+"hero.lead":"იპოვე დასასვენებელი ადგილი და თავისუფლება აღმოსაჩენად. შეარჩიე სასტუმრო, აპარტამენტი ან ავტომობილი საბერძნეთში.",
+"search.serviceLabel":"აირჩიე სამოგზაურო სერვისი","service.hotels":"სასტუმროები","service.apartments":"აპარტამენტები","service.cars":"ავტომობილის ქირაობა",
+"search.destination":"მიმართულება","search.destinationPlaceholder":"კუნძული, ქალაქი ან რეგიონი","search.arrival":"ჩასვლა","search.departure":"გამგზავრება","search.travellers":"მოგზაურები","search.button":"ძებნა",
+"travellers.one":"1 ადამიანი","travellers.two":"2 ადამიანი","travellers.three":"3 ადამიანი","travellers.four":"4 ადამიანი","travellers.fivePlus":"5 ან მეტი ადამიანი",
+"search.notice":"{{service}}-ის დაჯავშნა ხელმისაწვდომი გახდება პარტნიორთან დაკავშირების შემდეგ.","search.ready":"{{destination}}-ში {{service}}-ის ძიება მზადაა პარტნიორთან დასაკავშირებლად.",
+"essentials.kicker":"მოგზაურობისთვის აუცილებელი","essentials.title":"ყველაფერი შენი მოგზაურობისთვის","essentials.subtitle":"აირჩიე საჭირო სერვისი და დაიწყე მოგზაურობის დაგეგმვა.",
+"tile.hotels":"შეარჩიე დასასვენებელი ადგილი — ქალაქის კომფორტული სასტუმროდან კუნძულის მშვიდ გარემომდე.","tile.apartments":"იპოვე შენი სივრცე შაბათ-კვირის გასატარებლად ან უფრო ხანგრძლივი ბერძნული დასვენებისთვის.","tile.cars":"შეარჩიე ავტომობილი და აღმოაჩინე საბერძნეთის პლაჟები, სოფლები და ნაკლებად ცნობილი ადგილები.",
+"destinations.kicker":"იდეებისთვის","destinations.title":"პოპულარული ადგილები საბერძნეთში","destinations.subtitle":"რამდენიმე იდეა იმისთვის, თუ სად შეიძლება წაგიყვანოს შემდეგმა მოგზაურობამ.",
+"place.crete":"კრეტა","place.creteDesc":"პლაჟები, სოფლები და ისტორია","place.athens":"ათენი","place.athensDesc":"კულტურა, კერძები და ქალაქური ცხოვრება","place.rhodes":"როდოსი","place.rhodesDesc":"მზე და კუნძულის ხიბლი",
+"meta.title":"TEMO TRAVEL | აღმოაჩინე საბერძნეთი","meta.description":"აღმოაჩინე სასტუმროები, აპარტამენტები და ავტომობილების გაქირავება საბერძნეთში TEMO TRAVEL-თან ერთად."
+},
+en:{
+"brand.home":"TEMO TRAVEL — Home","language.label":"Choose language",
+"nav.hotels":"Hotels","nav.apartments":"Apartments","nav.cars":"Car rental",
+"hero.kicker":"Explore Greece with confidence","hero.title":"Your Greek escape","hero.titleAccent":"starts here.",
+"hero.lead":"Find a place to stay and the freedom to explore. Discover hotels, apartments and car rentals across Greece.",
+"search.serviceLabel":"Choose a travel service","service.hotels":"Hotels","service.apartments":"Apartments","service.cars":"Car rental",
+"search.destination":"Destination","search.destinationPlaceholder":"Island, city or region","search.arrival":"Arrival","search.departure":"Departure","search.travellers":"Travellers","search.button":"Search",
+"travellers.one":"1 person","travellers.two":"2 people","travellers.three":"3 people","travellers.four":"4 people","travellers.fivePlus":"5+ people",
+"search.notice":"{{service}} booking will be available when the booking partner is connected.","search.ready":"Your {{service}} search for {{destination}} is ready for the booking-partner connection.",
+"essentials.kicker":"Travel essentials","essentials.title":"Everything for your trip","essentials.subtitle":"Choose the service you need and start planning your journey.",
+"tile.hotels":"Discover places to stay, from comfortable city hotels to relaxing island escapes.","tile.apartments":"Find your own space for a weekend break or a longer Greek holiday.","tile.cars":"Choose a car and explore beaches, villages and hidden corners of Greece.",
+"destinations.kicker":"Get inspired","destinations.title":"Popular places in Greece","destinations.subtitle":"A few ideas for where your next journey could take you.",
+"place.crete":"Crete","place.creteDesc":"Beaches, villages and history","place.athens":"Athens","place.athensDesc":"Culture, food and city life","place.rhodes":"Rhodes","place.rhodesDesc":"Sunshine and island charm",
+"meta.title":"TEMO TRAVEL | Discover Greece","meta.description":"Discover hotels, apartments and car rentals across Greece with TEMO TRAVEL."
+},
+el:{
+"brand.home":"TEMO TRAVEL — Αρχική σελίδα","language.label":"Επιλογή γλώσσας",
+"nav.hotels":"Ξενοδοχεία","nav.apartments":"Διαμερίσματα","nav.cars":"Ενοικίαση αυτοκινήτου",
+"hero.kicker":"Ανακαλύψτε την Ελλάδα με σιγουριά","hero.title":"Οι ελληνικές διακοπές σας","hero.titleAccent":"ξεκινούν εδώ.",
+"hero.lead":"Βρείτε διαμονή και την ελευθερία να εξερευνήσετε. Ανακαλύψτε ξενοδοχεία, διαμερίσματα και ενοικιάσεις αυτοκινήτων σε όλη την Ελλάδα.",
+"search.serviceLabel":"Επιλέξτε ταξιδιωτική υπηρεσία","service.hotels":"Ξενοδοχεία","service.apartments":"Διαμερίσματα","service.cars":"Ενοικίαση αυτοκινήτου",
+"search.destination":"Προορισμός","search.destinationPlaceholder":"Νησί, πόλη ή περιοχή","search.arrival":"Άφιξη","search.departure":"Αναχώρηση","search.travellers":"Ταξιδιώτες","search.button":"Αναζήτηση",
+"travellers.one":"1 άτομο","travellers.two":"2 άτομα","travellers.three":"3 άτομα","travellers.four":"4 άτομα","travellers.fivePlus":"5+ άτομα",
+"search.notice":"Η κράτηση για {{service}} θα είναι διαθέσιμη μόλις συνδεθεί ο συνεργάτης κρατήσεων.","search.ready":"Η αναζήτησή σας για {{service}} στον προορισμό {{destination}} είναι έτοιμη για σύνδεση με τον συνεργάτη κρατήσεων.",
+"essentials.kicker":"Όλα όσα χρειάζεστε για το ταξίδι","essentials.title":"Όλα για το ταξίδι σας","essentials.subtitle":"Επιλέξτε την υπηρεσία που χρειάζεστε και ξεκινήστε να σχεδιάζετε το ταξίδι σας.",
+"tile.hotels":"Ανακαλύψτε επιλογές διαμονής, από άνετα ξενοδοχεία στην πόλη έως χαλαρωτικές αποδράσεις σε νησιά.","tile.apartments":"Βρείτε τον δικό σας χώρο για μια απόδραση το Σαββατοκύριακο ή για μεγαλύτερες διακοπές στην Ελλάδα.","tile.cars":"Επιλέξτε αυτοκίνητο και εξερευνήστε παραλίες, χωριά και κρυφές γωνιές της Ελλάδας.",
+"destinations.kicker":"Πάρτε ιδέες","destinations.title":"Δημοφιλείς προορισμοί στην Ελλάδα","destinations.subtitle":"Μερικές ιδέες για το πού μπορεί να σας οδηγήσει το επόμενο ταξίδι σας.",
+"place.crete":"Κρήτη","place.creteDesc":"Παραλίες, χωριά και ιστορία","place.athens":"Αθήνα","place.athensDesc":"Πολιτισμός, φαγητό και ζωή στην πόλη","place.rhodes":"Ρόδος","place.rhodesDesc":"Ήλιος και νησιώτικη γοητεία",
+"meta.title":"TEMO TRAVEL | Ανακαλύψτε την Ελλάδα","meta.description":"Ανακαλύψτε ξενοδοχεία, διαμερίσματα και ενοικιάσεις αυτοκινήτων στην Ελλάδα με την TEMO TRAVEL."
+}
+};
+const keys=Object.keys(translations.en);
+const missing=[];
+for(const locale of ["ka","el"]){for(const key of keys){if(!(key in translations[locale]))missing.push({locale,key});}}
+for(const locale of Object.keys(translations)){for(const key of Object.keys(translations[locale])){if(!(key in translations.en))missing.push({locale,key,extra:true});}}
+if(missing.length)console.warn("[TEMO i18n] Translation catalog mismatch:",missing);
+const sourceText=new WeakMap();
+document.querySelectorAll("[data-i18n]").forEach(node=>sourceText.set(node,node.textContent));
+const languageSelect=document.getElementById("languageSelect");
+const destinationInput=document.getElementById("destination");
 const status=document.getElementById("status");
+let language="ka",selectedKind="hotels",statusMode="notice";
+const serviceKey=kind=>"service."+kind;
+function t(key,values={}){
+const localeValue=translations[language]?.[key];
+const fallbackValue=translations.en[key];
+let value=localeValue??fallbackValue;
+if(value===undefined){console.warn("[TEMO i18n] Missing translation key:",key);value=key;}
+return value.replace(/\{\{(\w+)\}\}/g,(_,name)=>String(values[name]??""));
+}
+function renderStatus(){
+const key=statusMode==="ready"?"search.ready":"search.notice";
+status.textContent=t(key,{service:t(serviceKey(selectedKind)).toLocaleLowerCase(language),destination:destinationInput.value.trim()});
+}
+function applyLanguage(nextLanguage){
+language=translations[nextLanguage]?nextLanguage:"ka";
+document.documentElement.lang=language;
+languageSelect.value=language;
+try{localStorage.setItem("temo-language",language);}catch(_){}
+document.querySelectorAll("[data-i18n]").forEach(node=>{
+const key=node.dataset.i18n;
+node.textContent=translations[language][key]??translations.en[key]??sourceText.get(node)??key;
+});
+document.querySelectorAll("[data-i18n-placeholder]").forEach(node=>node.placeholder=t(node.dataset.i18nPlaceholder));
+document.querySelectorAll("[data-i18n-aria]").forEach(node=>node.setAttribute("aria-label",t(node.dataset.i18nAria)));
+document.title=t("meta.title");
+document.getElementById("metaDescription").content=t("meta.description");
+renderStatus();
+window.dispatchEvent(new CustomEvent("temo:languagechange",{detail:{language}}));
+}
+try{const saved=localStorage.getItem("temo-language");if(saved&&translations[saved])language=saved;}catch(_){}
+languageSelect.value=language;
+languageSelect.addEventListener("change",()=>applyLanguage(languageSelect.value));
 document.querySelectorAll(".tab").forEach(button=>button.addEventListener("click",()=>{
 document.querySelectorAll(".tab").forEach(tab=>tab.classList.remove("active"));
-button.classList.add("active");selected=button.dataset.kind;
-status.textContent=selected+" booking search will be available when the booking partner is connected.";
+button.classList.add("active");selectedKind=button.dataset.kind;statusMode="notice";renderStatus();
 }));
 document.getElementById("searchForm").addEventListener("submit",event=>{
-event.preventDefault();
-const destination=document.getElementById("destination").value.trim();
-status.textContent="Your "+selected.toLowerCase()+" search for "+destination+" is ready for the booking-partner connection.";
+event.preventDefault();statusMode="ready";renderStatus();
 });
+destinationInput.addEventListener("input",()=>{if(statusMode==="ready")renderStatus();});
 document.getElementById("year").textContent=new Date().getFullYear();
+window.TemoI18n={t,setLanguage:applyLanguage,getLanguage:()=>language,checkCompleteness:()=>{const report={};for(const locale of Object.keys(translations)){report[locale]={missing:keys.filter(key=>!(key in translations[locale])),extra:Object.keys(translations[locale]).filter(key=>!(key in translations.en))};}return report;}};
+applyLanguage(language);
+})();
 </script>
 </body></html>
